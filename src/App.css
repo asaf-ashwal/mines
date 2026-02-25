@@ -1,0 +1,13 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background: #faf7f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    circle,
+    rgb(154, 197, 247) 0%,
+    rgb(4, 115, 243) 100%
+  );
+}

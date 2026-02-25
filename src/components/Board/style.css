@@ -1,0 +1,17 @@
+.board {
+  width: 600px;
+  height: 600px;
+  background-color: rgba(3, 3, 3, 0.24);
+  border-radius: 5px;
+  display: grid;
+  gap: 5px;
+  padding: 5px;
+}
+.board div{
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+font-size: xx-large;
+}
+
