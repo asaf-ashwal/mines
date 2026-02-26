@@ -17,7 +17,7 @@ function App() {
   const [open, setOpen] = useState(0);
   useEffect(() => {
     console.log("in EFFECT");
-    if (open === board.length - 1 - (booms.length - 1))
+    if (open === board.length - 1 - (booms.length ))
       setClicks({ text: "Victory !!!", class: "von" });
   }, [board]);
   // useEffect(() => {
