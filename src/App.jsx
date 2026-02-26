@@ -44,7 +44,7 @@ function App() {
 <section className="pSection">
 
       <p>Open: {open}</p>
-      <p>Booms: {booms.length-1}</p>
+      <p>Booms: {booms.length}</p>
 </section>
       <Board />
       <ReasetButton />
