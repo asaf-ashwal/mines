@@ -10,8 +10,9 @@
   overflow-y: auto;
 }
 .board div {
-  min-width: 40px;
-  height:40px;
+  /* max-width: 45px; */
+  width: 45px;
+  height:45px;
    border: 1px solid white;
   display: flex;
   align-items: center;
