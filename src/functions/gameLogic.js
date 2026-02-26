@@ -4,7 +4,7 @@ export function countTouchingBooms(arr, index, x, y) {
   let num;
   // שןרה עליונה
   if (index < x) {
-    console.log("top");
+    // console.log("top");
     // פינה שמאלית
     if (index === 0) return topLeft(arr, index, y);
     //פינה ימנית
@@ -15,8 +15,8 @@ export function countTouchingBooms(arr, index, x, y) {
 
   //   שורה תחתונה
   else if (x * y - x  <= index) {
-    console.log('bottom');
-    console.log((x * y - x) ,index);
+    // console.log('bottom');
+    // console.log((x * y - x) ,index);
 
     //פינה ימנית
     if (x * y - x === index) return bottomLeft(arr, index, y);
@@ -28,18 +28,18 @@ export function countTouchingBooms(arr, index, x, y) {
 
   // שורה שמאלית
   else if (!(index % x)) {
-    console.log("left");
+    // console.log("left");
     return left(arr, index, y);
   }
   //  שורה ימנית
   else if (index % x === x - 1) {
-    console.log("right");
+    // console.log("right");
     return right(arr, index, y);
   }
   //   center
   else {
-    console.log("cener");
-    console.log(index % x);
+    // console.log("cener");
+    // console.log(index % x);
     return center(arr, index, y);
   }
 }
@@ -56,8 +56,8 @@ function top(arr, index, y) {
   let n = 0;
   n += leftSweep(arr, index, y);
   n += rightSweep(arr, index, y);
-  n += bottomSweep(arr, index, y);
   n += bottomLeftSweep(arr, index, y);
+  n += bottomSweep(arr, index, y);
   n += bottomRightSweep(arr, index, y);
   return n;
 }
@@ -120,6 +120,42 @@ function bottom(arr, index, y) {
   n += rightSweep(arr, index, y);
   return n;
 }
+function topLeftSweep(arr, n, y) {
+  return arr.includes(n - y - 1) && 1;
+}
+
+function topSweep(arr, n, y) {
+  return arr.includes(n - y) && 1;
+}
+
+function topRightSweep(arr, n, y) {
+  return arr.includes(n - y + 1) && 1;
+}
+
+function leftSweep(arr, n, y) {
+  return arr.includes(n - 1) && 1;
+}
+
+function rightSweep(arr, n, y) {
+  const x = arr.includes(n + 1) && 1;
+  // console.log("x: ", x);
+  return x;
+}
+
+function bottomLeftSweep(arr, n, y) {
+  const x = arr.includes(n + y - 1) && 1;
+  return x;
+}
+
+function bottomSweep(arr, n, y) {
+  return arr.includes(n + y) && 1;
+}
+
+function bottomRightSweep(arr, n, y) {
+  return arr.includes(n + y + 1) && 1;
+}
+
+
 function bottomRight(arr, index, y) {
   let n = 0;
   n += topLeftSweep(arr, index, y);
@@ -128,37 +164,15 @@ function bottomRight(arr, index, y) {
   return n;
 }
 
-function topLeftSweep(arr, n, y) {
-  return arr.includes(n - y - 1) && 1;
-}
-function topRightSweep(arr, n, y) {
-  return arr.includes(n - y + 1) && 1;
-}
-function bottomRightSweep(arr, n, y) {
-  return arr.includes(n + y + 1) && 1;
-}
-function bottomLeftSweep(arr, n, y) {
-  const x = arr.includes(n + y - 1) && 1;
-  // console.log("x: ", x);
-  return x;
-}
+
+
+
 
 // function middleSweep(arr, n, y) {
 //   return arr[n] === "boom" && 1;
 // }
 
-function topSweep(arr, n, y) {
-  return arr.includes(n - y) && 1;
-}
 
-function leftSweep(arr, n, y) {
-  return arr.includes(n - 1) && 1;
-}
-function rightSweep(arr, n, y) {
-  const x = arr.includes(n + 1) && 1;
-  // console.log("x: ", x);
-  return x;
-}
-function bottomSweep(arr, n, y) {
-  return arr.includes(n + y) && 1;
-}
+
+
+

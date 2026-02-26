@@ -1,17 +1,37 @@
 .board {
-  width: 600px;
-  height: 600px;
+  /* margin-top: 10px; */
+  /* max-width: 90vw; */
+  /* height: 70vh; */
   background-color: rgba(3, 3, 3, 0.24);
   border-radius: 5px;
   display: grid;
   gap: 5px;
-  padding: 5px;
+  padding: 5px ;
+  overflow-y: auto;
 }
-.board div{
-  border: 1px solid white;
+.board div {
+  min-width: 40px;
+  height:40px;
+   border: 1px solid white;
   display: flex;
   align-items: center;
   justify-content: center;
-font-size: xx-large;
+  font-size: xx-large;
+  font-weight: 900;
 }
+.lost{
+  background-color: rgba(99, 98, 98, 0.514);
+  color: rgba(77, 76, 76, 0.753);
+}
+.von{
+  background-color: rgba(99, 98, 98, 0.514);
 
+}
+@media(max-width: 600px){
+.board {
+  /* width: 95vw; */
+}
+.board div{
+  font-size: large;
+}
+}
